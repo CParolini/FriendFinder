@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Friend Finder</title>
+
+<!--link to bootstrap and jquery-->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<!--Bootstrap theme container holding all of the questions for the user to answer-->
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div col-md-12>
+                <h2>Survey Questions</h2>
+                <hr />
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>About You</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+                            <div class="form-group">
+                                <label for="name">Name (Required)</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="link">Link to Photo Image (required)</label>
+                                <input type="text" class="form-control" id="link">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Question 1</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+                            <div class="form-group">
+                                <label for="q1">You are open to new experiences</label>
+                                <select id="q1">
+                                    <option value="-1">Select an Option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Question 2</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+                            <div class="form-group">
+                                <label for="q2">You enjoy being social</label>
+                                <select id="q2">
+                                    <option value="-1">Select an Option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Question 3</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+                            <div class="form-group">
+                                <label for="q3">You'd rather read a book than watch a movie</label>
+                                <select id="q3">
+                                    <option value="-1">Select an Option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Question 4</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+                            <div class="form-group">
+                                <label for="q4">You're more cautious than adventurous'</label>
+                                <select id="q4">
+                                    <option value="-1">Select an Option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Question 5</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+                            <div class="form-group">
+                                <label for="q5">You're a lone wolf... a one (wo)man show</label>
+                                <select id="q5">
+                                    <option value="-1">Select an Option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Question 6</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+                            <div class="form-group">
+                                <label for="q6">You prefer pizza roles to bagel bites</label>
+                                <select id="q6">
+                                    <option value="-1">Select an Option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Question 7</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+                            <div class="form-group">
+                                <label for="q7">You prefer laying down to running</label>
+                                <select id="q7">
+                                    <option value="-1">Select an Option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Question 8</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+                            <div class="form-group">
+                                <label for="q8">You like to visit new places rather than go somewhere you've been</label>
+                                <select id="q8">
+                                    <option value="-1">Select an Option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Question 9</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+                            <div class="form-group">
+                                <label for="q9">You like dogs more than cats</label>
+                                <select id="q9">
+                                    <option value="-1">Select an Option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Question 10</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+                            <div class="form-group">
+                                <label for="q10">You like animals more than people</label>
+                                <select id="q10">
+                                    <option value="-1">Select an Option</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary submit" style="background-color: #0D254C">Submit</button>
+
+                <br />
+                <br />
+                <footer class="footer">
+                    <p><a href="/api/friends">Friends List</a> | <a href="https://github.com/CParolini/friendfinder">GitHub Repo</a> </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <!--Modal will pop up after user answers questions and will show match name and image-->
+    <div id="resultsModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title"><strong>Best Match</strong></h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="matchName"></h2>
+                    <img id="matchImg" src="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--Script-->
+    <script type="text/javascript">
+        //when submit button is clicked the following function will trigger
+        $(".submit").on("click", function() {
+            //var userAnswers stores the users name, image url, and scores
+            var userAnswers = {
+                name: $('#name').val().trim(),
+                image: $('#link').val().trim(),
+                scores: [
+                    $('#q1').val().trim(),
+                    $('#q2').val().trim(),
+                    $('#q3').val().trim(),
+                    $('#q4').val().trim(),
+                    $('#q5').val().trim(),
+                    $('#q6').val().trim(),
+                    $('#q7').val().trim(),
+                    $('#q8').val().trim(),
+                    $('#q9').val().trim(),
+                    $('#q10').val().trim(),
+                ]
+            };
+            //console logging scores, users name, user image link
+            console.log("Here are your scores " + userAnswers.name + "" + userAnswers.image + "" + userAnswers.scores);
+            //our current url location
+            var currentURL = window.location.origin;
+            // AJAX post the data to the friends API.
+            $.post(currentURL + "/api/friends", userAnswers, function(data) {
+                // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                $('#matchName').html(data.name);
+                console.log(data.name);
+                $('#matchImg').attr("src", data.photo);
+                console.log(data.photo)
+                // Show the modal with the best match
+                $("#resultsModal").modal('show');
+            });
+
+
+            return false;
+        });
+    </script>
+
+</body>
+
+</html>
