@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Friend Finder</title>
 
-<!--link to bootstrap and jquery-->
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<head>
+    <title>Friend Finder</title>
+
+    <!--link to bootstrap and jquery-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <!--Bootstrap theme container holding all of the questions for the user to answer-->
 
@@ -237,7 +238,7 @@
                     <img id="matchImg" src="">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default close" data-dismiss="modal">Close</button>
                 </div>
             </div>
 
@@ -247,41 +248,45 @@
     <script type="text/javascript">
         //when submit button is clicked the following function will trigger
         $(".submit").on("click", function() {
-            //var userAnswers stores the users name, image url, and scores
-            var userAnswers = {
-                name: $('#name').val().trim(),
-                image: $('#link').val().trim(),
-                scores: [
-                    $('#q1').val().trim(),
-                    $('#q2').val().trim(),
-                    $('#q3').val().trim(),
-                    $('#q4').val().trim(),
-                    $('#q5').val().trim(),
-                    $('#q6').val().trim(),
-                    $('#q7').val().trim(),
-                    $('#q8').val().trim(),
-                    $('#q9').val().trim(),
-                    $('#q10').val().trim(),
-                ]
-            };
-            //console logging scores, users name, user image link
-            console.log("Here are your scores " + userAnswers.name + "" + userAnswers.image + "" + userAnswers.scores);
-            //our current url location
-            var currentURL = window.location.origin;
-            // AJAX post the data to the friends API.
-            $.post(currentURL + "/api/friends", userAnswers, function(data) {
-                // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                $('#matchName').html(data.name);
-                console.log(data.name);
-                $('#matchImg').attr("src", data.photo);
-                console.log(data.photo)
-                // Show the modal with the best match
-                $("#resultsModal").modal('show');
-            });
+                    //var userAnswers stores the users name, image url, and scores
+                    var userAnswers = {
+                        name: $('#name').val().trim(),
+                        image: $('#link').val().trim(),
+                        scores: [
+                            $('#q1').val().trim(),
+                            $('#q2').val().trim(),
+                            $('#q3').val().trim(),
+                            $('#q4').val().trim(),
+                            $('#q5').val().trim(),
+                            $('#q6').val().trim(),
+                            $('#q7').val().trim(),
+                            $('#q8').val().trim(),
+                            $('#q9').val().trim(),
+                            $('#q10').val().trim(),
+                        ]
+                    };
+                    //console logging scores, users name, user image link
+                    console.log("Here are your scores " + userAnswers.name + "" + userAnswers.image + "" + userAnswers.scores);
+                    //our current url location
+                    var currentURL = window.location.origin;
+                    // AJAX post the data to the friends API.
+                    $.post(currentURL + "/api/friends", userAnswers, function(data) {
+                        // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                        $('#matchName').html(data.name);
+                        console.log(data.name);
+                        $('#matchImg').attr("src", data.photo);
+                        console.log(data.photo)
+                        // Show the modal with the best match
+                        $("#resultsModal").modal('show');
+                    });
+
+                    $(".close").on("click", function() {
+                            location.reload();
+                        };
 
 
-            return false;
-        });
+                        return false;
+                    });
     </script>
 
 </body>
